@@ -1,0 +1,290 @@
+/* Base Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    background-color: #140f0a;
+    /* Deep rich brown/black background */
+    min-height: 100dvh;
+    /* Changed from fixed height */
+    width: 100%;
+}
+
+/* App Container */
+.app-container {
+    width: 100%;
+    min-height: 100dvh;
+    /* Expand as needed */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Hero Section (Background Image) */
+.hero-section {
+    position: relative;
+    width: 100%;
+    flex: 1;
+    /* Take up all space except footer */
+    min-height: 600px;
+    /* Safe minimum height before it forces scrolling */
+    background-image: url('hero_bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: stretch;
+    /* Allow wrapper to fill vertical space */
+    padding-left: 10vw;
+    /* Push content to the left like the image */
+}
+
+/* Subtle dark gradient overlay to make white text pop against the loom */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(20, 15, 10, 0.95) 0%, rgba(20, 15, 10, 0.7) 45%, rgba(20, 15, 10, 0) 100%);
+    pointer-events: none;
+}
+
+/* Content Wrapper */
+.content-wrapper {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+    /* Constrain width to keep it clustered globally */
+    text-align: center;
+    padding: 8vh 0 15vh 0;
+    /* Adds generous empty space at the very bottom */
+}
+
+.main-text-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    margin-top: auto;
+    /* Dynamically centers itself */
+}
+
+.shuttle-logo {
+    color: #fdfbf7;
+    margin-bottom: -10px;
+    opacity: 0.9;
+    width: clamp(80px, 40vw, 240px);
+    /* Allows the shuttle to shrink significantly */
+}
+
+.shuttle-logo svg {
+    width: 100%;
+    height: auto;
+}
+
+.logo-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.2rem, 10vw, 6.5rem);
+    /* Minimum size drastically decreased */
+    font-weight: 500;
+    letter-spacing: 0.3em;
+    margin: 0;
+    margin-left: 0.3em;
+    color: #fdfbf7;
+    text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.divider-with-icon {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 140px;
+    color: #fdfbf7;
+}
+
+.divider-with-icon .line {
+    flex: 1;
+    height: 1px;
+    background-color: #fdfbf7;
+    opacity: 0.6;
+}
+
+.subtitle {
+    font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    color: #fdfbf7;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.small-diamond-divider {
+    display: flex;
+    justify-content: center;
+    margin: 5px 0 15px 0;
+}
+
+.small-diamond-divider .diamond {
+    width: 5px;
+    height: 5px;
+    background-color: #d8b284;
+    /* Soft gold/orange from the image */
+    transform: rotate(45deg);
+}
+
+.launch-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+    font-weight: 700;
+    /* Made text bold */
+    letter-spacing: 0.5em;
+    color: #d8b284;
+    text-transform: uppercase;
+    margin-left: 0.5em;
+}
+
+.launch-divider {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 220px;
+    margin: 15px 0 25px 0;
+}
+
+.launch-divider .line {
+    flex: 1;
+    height: 1px;
+    background-color: #d8b284;
+    opacity: 0.4;
+}
+
+.launch-divider .diamond {
+    width: 5px;
+    height: 5px;
+    background-color: #d8b284;
+    transform: rotate(45deg);
+}
+
+/* Features Row */
+.features-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.feature-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    color: #fdfbf7;
+}
+
+.feature-icon {
+    width: clamp(32px, 4vw, 48px);
+    /* Much bigger and responsive */
+    height: clamp(32px, 4vw, 48px);
+    /* Much bigger and responsive */
+    color: #d8b284;
+    stroke-width: 1.5;
+    /* Makes the lines thicker and clearly visible */
+}
+
+.feature-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(0.65rem, 1.2vw, 0.85rem);
+    font-weight: 400;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-left: 0.25em;
+}
+
+.feature-separator {
+    width: 1px;
+    height: 30px;
+    background-color: #fdfbf7;
+    opacity: 0.3;
+}
+
+/* Bottom Footer Note */
+.footer-note {
+    margin-top: auto;
+    /* Dynamically pushes to the bottom */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 15px;
+}
+
+.footer-line {
+    width: 2px;
+    background-color: #d8b284;
+    opacity: 0.8;
+}
+
+.footer-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(0.65rem, 1.2vw, 0.85rem);
+    line-height: 1.8;
+    letter-spacing: 0.25em;
+    color: #fdfbf7;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .hero-section {
+        padding-left: 5vw;
+    }
+
+    .content-wrapper {
+        max-width: fit-content;
+        /* Specifically fixes the left-overflow issue on 1024x600 views */
+    }
+}
+
+@media (max-width: 1024px) and (orientation: portrait),
+(max-width: 850px) {
+    .hero-section {
+        padding-left: 0;
+        justify-content: center;
+    }
+
+    .hero-section::before {
+        background: linear-gradient(to bottom, rgba(20, 15, 10, 0.9) 0%, rgba(20, 15, 10, 0.2) 50%, rgba(20, 15, 10, 0.9) 100%);
+    }
+
+    .footer-note {
+        width: 90%;
+        text-align: center;
+    }
+
+    .footer-line {
+        display: none;
+        /* Hide vertical line on mobile */
+    }
+
+
+}
+
+@media (max-width: 480px) {
+    .launch-divider {
+        width: 140px;
+    }
+}
